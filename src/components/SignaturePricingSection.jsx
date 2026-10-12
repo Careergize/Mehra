@@ -21,7 +21,7 @@ export default function SignaturePricingSection({ onOpenBooking }) {
       desc: "Permanent straightening, rebonding, or formaldehyde-free nanoplastia smoothing using authentic L’Oréal Professionnel formulations.",
       priceButton: "₹3,500 – ₹7,500",
       image: "/images/haircut-styling.jpg",
-      buttonColor: "bg-[#1A1819] hover:bg-[#332E30]",
+      buttonColor: "bg-[#C2185B] hover:bg-[#A8134D]",
       highlights: ["L'Oréal & Matrix Products", "Zero Frizz in Kerala Weather", "Lasts 4–6 Months", "Hair Spa Included"]
     },
     {
@@ -41,13 +41,13 @@ export default function SignaturePricingSection({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading matching Reference UI */}
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight">
-              Signature Packages & Pricing
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight text-center">
+              Signature Packages &amp; Pricing
             </h2>
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
           </div>
           <p className="text-stone-500 text-xs sm:text-sm max-w-lg mx-auto">
             Transparent pricing for our most requested bridal makeovers, hair chemistry, and pre-wedding rejuvenation rituals.
@@ -66,7 +66,7 @@ export default function SignaturePricingSection({ onOpenBooking }) {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-xs px-3 py-1 rounded-full text-[11px] font-bold text-[#C2185B] shadow-xs">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Flower2, HeartHandshake, Smile, Scissors } from 'lucide-react';
 import { studioInfo } from '../data/studioInfo';
 
-export default function AdditionalServicesSection({ onOpenBooking }) {
+export default function AdditionalServicesSection({ onOpenBooking, onSelectServiceForBooking }) {
   const additional = [
     {
       icon: Flower2,
@@ -39,13 +39,13 @@ export default function AdditionalServicesSection({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading With Reference Style */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1A1819] tracking-tight">
+        <div className="text-center mb-10 sm:mb-12">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#1A1819] tracking-tight text-center">
               Additional Services
             </h2>
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
           </div>
           <p className="text-stone-500 text-xs sm:text-sm">
             Curated beauty, hair & aesthetic grooming rituals performed with sterile precision.
@@ -60,7 +60,20 @@ export default function AdditionalServicesSection({ onOpenBooking }) {
               <div
                 key={idx}
                 className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/90 shadow-sm hover:shadow-xl hover:border-[#F8BBD0] transition-all duration-300 flex flex-col items-center text-center justify-between group cursor-pointer"
-                onClick={onOpenBooking}
+                onClick={() => {
+                  if (onSelectServiceForBooking) {
+                    onSelectServiceForBooking({
+                      id: `additional-${idx}`,
+                      title: item.title,
+                      priceRange: item.price,
+                      category: 'Grooming & Skin',
+                      duration: '30–60 Mins',
+                      shortDesc: item.desc
+                    });
+                  } else {
+                    onOpenBooking();
+                  }
+                }}
               >
                 <div className="flex flex-col items-center">
                   {/* Pink circular icon */}

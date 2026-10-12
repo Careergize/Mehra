@@ -4,21 +4,12 @@ import { servicesData } from '../data/servicesData';
 import { studioInfo } from '../data/studioInfo';
 
 export default function AppointmentModal({ isOpen, onClose, initialService }) {
-  const [selectedServiceId, setSelectedServiceId] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [date, setDate] = useState('');
   const [timeSlot, setTimeSlot] = useState('Morning (10:00 AM - 1:00 PM)');
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    if (initialService) {
-      setSelectedServiceId(initialService.id);
-    } else {
-      setSelectedServiceId(servicesData[0]?.id || '');
-    }
-  }, [initialService, isOpen]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -38,12 +29,25 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
 
   if (!isOpen) return null;
 
-  const currentService = servicesData.find(s => s.id === selectedServiceId) || servicesData[0];
+  // Resolve active service selected from rows or provide general consultation
+  const currentService = (typeof initialService === 'object' && initialService !== null)
+    ? initialService
+    : (typeof initialService === 'string' 
+        ? servicesData.find(s => s.id === initialService) 
+        : null) 
+      || {
+        id: 'general-consultation',
+        title: 'General Salon & Bridal Consultation',
+        category: 'Consultation',
+        priceRange: 'In-Studio Assessment',
+        duration: '30–45 Mins',
+        shortDesc: 'Personalized treatment consultation with our senior beauty artists at Kanimangalam, Thrissur.'
+      };
 
   const handleBooking = (e) => {
     e.preventDefault();
     const formattedMsg = `Hello Mehra Beauty Studio, I want to book an appointment:
-• Service: ${currentService?.title || 'General Consultation'} (${currentService?.priceRange || ''})
+• Service: ${currentService.title}${currentService.priceRange ? ` (${currentService.priceRange})` : ''}
 • Name: ${name || 'Valued Client'}
 • Phone: ${phone || 'Not provided'}
 • Preferred Date: ${date || 'Flexible'}
@@ -104,29 +108,57 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
               </p>
             </div>
           ) : (
-            <form onSubmit={handleBooking} className="space-y-4">
+            <form onSubmit={handleBooking} className="space-y-5">
               
-              {/* Service Selection */}
+              {/* Selected Service Display (Dropdown Removed - Mentioned in Front) */}
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
-                  Select Service / Treatment *
-                </label>
-                <select
-                  value={selectedServiceId}
-                  onChange={(e) => setSelectedServiceId(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-stone-300 bg-[#FFFDFD] text-xs sm:text-sm font-medium focus:outline-hidden focus:border-[#C2185B] focus:ring-1 focus:ring-[#C2185B]"
-                >
-                  {servicesData.map((svc) => (
-                    <option key={svc.id} value={svc.id}>
-                      {svc.title} — {svc.priceRange}
-                    </option>
-                  ))}
-                </select>
-                {currentService && (
-                  <p className="text-[11px] text-[#C2185B] mt-1 font-semibold">
-                    Duration: {currentService.duration} • Category: {currentService.category.toUpperCase()}
-                  </p>
-                )}
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
+                    Selected Service / Treatment
+                  </label>
+                  {initialService && (
+                    <a
+                      href="#services"
+                      onClick={onClose}
+                      className="text-[11px] font-semibold text-[#C2185B] hover:underline"
+                    >
+                      Browse Other Rows
+                    </a>
+                  )}
+                </div>
+
+                <div className="rounded-2xl border border-[#F8BBD0] bg-gradient-to-br from-[#FFF5F8] via-[#FFFDFD] to-[#FFF0F5] p-4 sm:p-5 shadow-xs">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 flex-wrap mb-1.5">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#C2185B] bg-[#FCE4EC] px-2.5 py-0.5 rounded-full border border-[#F8BBD0]">
+                          {currentService.category ? `${currentService.category} Service` : 'Bridal & Salon'}
+                        </span>
+                          {currentService.duration && (
+                            <span className="text-[11px] text-stone-500 flex items-center gap-1 font-medium">
+                              <Clock className="w-3.5 h-3.5 text-stone-400" />
+                              {currentService.duration}
+                            </span>
+                          )}
+                        </div>
+                        <h4 className="font-serif text-base sm:text-lg font-bold text-[#1A1819] leading-snug">
+                          {currentService.title}
+                        </h4>
+                        {currentService.shortDesc && (
+                          <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+                            {currentService.shortDesc}
+                          </p>
+                        )}
+                      </div>
+
+                    {/* Price Pill */}
+                    <div className="shrink-0 text-right">
+                      <div className="inline-block px-3.5 py-1.5 rounded-full bg-[#C2185B] text-white text-xs sm:text-sm font-bold shadow-xs whitespace-nowrap">
+                        {currentService.priceRange}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Client Info Grid */}

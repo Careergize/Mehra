@@ -14,6 +14,7 @@ import FaqSection from './components/FaqSection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import AppointmentModal from './components/AppointmentModal';
+import GlitterBackground from './components/GlitterBackground';
 
 export default function App() {
   const [bookingModalOpen, setBookingModalOpen] = useState(false);
@@ -30,61 +31,69 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFDFD] text-[#1A1819] font-sans antialiased selection:bg-[#C2185B] selection:text-white">
-      {/* 1. Top Notice Banner */}
-      <TopBanner />
+    <div className="min-h-screen flex flex-col relative text-[#1A1819] font-sans antialiased selection:bg-[#C2185B] selection:text-white overflow-x-hidden">
+      {/* Golden Glitter Full Website Luxury Background with Canvas Twinkles */}
+      <GlitterBackground />
 
-      {/* 2. Sticky Header with Floral Monogram & Nav Links */}
-      <Navbar onOpenBooking={handleOpenBooking} />
+      <div className="relative z-10 flex flex-col flex-1">
+        {/* 1. Top Notice Banner */}
+        <TopBanner />
 
-      {/* Main Content Sections matching Reference Design */}
-      <main className="flex-1">
-        {/* 3. Hero Section with "Welcome to ♡", Headline, CTAs, and 4 Circular Feature Cards */}
-        <Hero onOpenBooking={handleOpenBooking} />
+        {/* 2. Sticky Header with Floral Monogram & Nav Links */}
+        <Navbar onOpenBooking={handleOpenBooking} />
 
-        {/* 4. "Our Services & Prices" with 01-04 numbered cards & pink price pills */}
-        <ServicesSection 
-          onOpenBooking={handleOpenBooking} 
-          onSelectServiceForBooking={handleSelectServiceForBooking} 
+        {/* Main Content Sections matching Reference Design */}
+        <main className="flex-1">
+          {/* 3. Hero Section with "Welcome to ♡", Headline, CTAs, and 4 Circular Feature Cards */}
+          <Hero onOpenBooking={handleOpenBooking} />
+
+          {/* 4. "Our Services & Prices" with 01-04 numbered cards & pink price pills */}
+          <ServicesSection
+            onOpenBooking={handleOpenBooking}
+            onSelectServiceForBooking={handleSelectServiceForBooking}
+          />
+
+          {/* 5. "Special Offer For You!" (20% OFF with Code) */}
+          <SpecialOfferBanner onOpenBooking={handleOpenBooking} />
+
+          {/* 6. "Additional Services" with circular pink icons & price pills */}
+          <AdditionalServicesSection
+            onOpenBooking={handleOpenBooking}
+            onSelectServiceForBooking={handleSelectServiceForBooking}
+          />
+
+          {/* 7. Signature Packages & Pricing with dark/berry arrow CTA buttons */}
+          <SignaturePricingSection onOpenBooking={handleOpenBooking} />
+
+          {/* 8. "Our Work Gallery" with 2x3 rounded square grid & expand icon */}
+          <GallerySection />
+
+          {/* 9. About Our Studio (10+ Years Trust in Kanimangalam) */}
+          <AboutSection onOpenBooking={handleOpenBooking} />
+
+          {/* 10. Client Testimonials & Trust Badges */}
+          <TestimonialsSection />
+
+          {/* 11. 3-Column Contact, Hours & "Book Your Appointment" card + Google Map */}
+          <LocationContactSection onOpenBooking={handleOpenBooking} />
+
+          {/* 12. Frequently Asked Questions */}
+          <FaqSection />
+        </main>
+
+        {/* 13. Full-width vibrant berry pink footer bar */}
+        <Footer onOpenBooking={handleOpenBooking} />
+
+        {/* Floating WhatsApp Action Button */}
+        <FloatingWhatsApp onOpenBooking={handleOpenBooking} />
+
+        {/* Interactive Appointment Modal */}
+        <AppointmentModal
+          isOpen={bookingModalOpen}
+          onClose={() => setBookingModalOpen(false)}
+          initialService={selectedServiceForModal}
         />
-
-        {/* 5. "Special Offer For You!" (20% OFF with Code) */}
-        <SpecialOfferBanner onOpenBooking={handleOpenBooking} />
-
-        {/* 6. "Additional Services" with circular pink icons & price pills */}
-        <AdditionalServicesSection onOpenBooking={handleOpenBooking} />
-
-        {/* 7. Signature Packages & Pricing with dark/berry arrow CTA buttons */}
-        <SignaturePricingSection onOpenBooking={handleOpenBooking} />
-
-        {/* 8. "Our Work Gallery" with 2x3 rounded square grid & expand icon */}
-        <GallerySection />
-
-        {/* 9. About Our Studio (10+ Years Trust in Kanimangalam) */}
-        <AboutSection onOpenBooking={handleOpenBooking} />
-
-        {/* 10. Client Testimonials & Trust Badges */}
-        <TestimonialsSection />
-
-        {/* 11. 3-Column Contact, Hours & "Book Your Appointment" card + Google Map */}
-        <LocationContactSection onOpenBooking={handleOpenBooking} />
-
-        {/* 12. Frequently Asked Questions */}
-        <FaqSection />
-      </main>
-
-      {/* 13. Full-width vibrant berry pink footer bar */}
-      <Footer onOpenBooking={handleOpenBooking} />
-
-      {/* Floating WhatsApp Action Button */}
-      <FloatingWhatsApp onOpenBooking={handleOpenBooking} />
-
-      {/* Interactive Appointment Modal */}
-      <AppointmentModal 
-        isOpen={bookingModalOpen}
-        onClose={() => setBookingModalOpen(false)}
-        initialService={selectedServiceForModal}
-      />
+      </div>
     </div>
   );
 }

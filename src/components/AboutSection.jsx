@@ -31,13 +31,13 @@ export default function AboutSection({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header with Reference Style */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight text-center">
               About Our Studio
             </h2>
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
           </div>
           <p className="text-stone-500 text-sm sm:text-base leading-relaxed">
             Established in 2014 at Chirayinmel Building, Mehra Beauty Parlour & Makeup Studio has flourished as Kanimangalam's trusted boutique salon for modern women.

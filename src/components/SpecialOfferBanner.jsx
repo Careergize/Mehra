@@ -12,7 +12,7 @@ export default function SpecialOfferBanner({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Banner Card Matching Reference Design */}
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#880E4F] p-8 sm:p-12 text-white shadow-xl shadow-[#C2185B]/20">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#D81B60] via-[#C2185B] to-[#880E4F] p-6 sm:p-10 md:p-12 text-white shadow-xl shadow-[#C2185B]/20">
           
           {/* Subtle background glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-3xl pointer-events-none" />
@@ -25,7 +25,7 @@ export default function SpecialOfferBanner({ onOpenBooking }) {
                 <CalendarHeart className="w-3.5 h-3.5 text-amber-300" />
                 <span>Kerala Bridal Calendar 2026</span>
               </div>
-              <h3 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h3 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
                 Wedding Season 2026 Bookings Open
               </h3>
               <p className="text-white/90 text-sm sm:text-base leading-relaxed font-sans">
@@ -34,7 +34,7 @@ export default function SpecialOfferBanner({ onOpenBooking }) {
             </div>
 
             {/* Right Action: Dates Open & CTA Pill */}
-            <div className="flex flex-col sm:flex-row items-center gap-5 shrink-0">
+            <div className="flex flex-col sm:flex-row items-center gap-5 shrink-0 w-full md:w-auto">
               <div className="flex flex-col items-center sm:items-end">
                 <span className="font-serif text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
                   NOW OPEN
@@ -48,7 +48,7 @@ export default function SpecialOfferBanner({ onOpenBooking }) {
                 href={offerWhatsAppLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#C2185B] bg-white hover:bg-stone-50 hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center gap-2"
+                className="w-full sm:w-auto px-6 sm:px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold text-[#C2185B] bg-white hover:bg-stone-50 hover:scale-105 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 text-[#25D366]" />
                 <span>Check Date Availability on WhatsApp</span>

@@ -84,18 +84,18 @@ export default function Hero({ onOpenBooking }) {
               {/* Outer soft pink glow */}
               <div className="absolute -inset-4 rounded-3xl bg-[#FCE4EC]/60 blur-xl -z-10" />
 
-              {/* Main Photo Card */}
-              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white">
+              {/* Main Photo Card with Luxury Gold Makeup Artistry */}
+              <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black">
                 <img
-                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1100&q=85"
-                  alt="Mehra Beauty Parlour and Makeup Studio bridal styling"
-                  className="w-full h-[400px] sm:h-[480px] object-cover object-center"
+                  src="/images/mehra-gold-glam.jpg"
+                  alt="Mehra Beauty Parlour & Makeup Studio luxury gold glam artistry"
+                  className="w-full h-[320px] sm:h-[460px] object-cover object-center transition-transform duration-700 hover:scale-105"
                   loading="eager"
                 />
               </div>
 
               {/* Bottom Inset Tag Badge */}
-              <div className="absolute -bottom-4 right-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl shadow-lg border border-[#F8BBD0] flex items-center gap-2">
+              <div className="absolute -bottom-3 sm:-bottom-4 right-3 sm:right-6 bg-white/95 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-lg border border-[#F8BBD0] flex items-center gap-1.5 sm:gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#C2185B] animate-pulse" />
                 <span className="text-xs font-bold text-[#1A1819]">Kerala Bridal Artistry</span>
                 <span className="text-xs text-stone-400">|</span>

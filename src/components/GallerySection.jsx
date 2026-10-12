@@ -5,43 +5,43 @@ import { studioInfo } from '../data/studioInfo';
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // 6 Curated Showcase Photos matching Reference UI 2x3 Grid
+  // 6 Curated Showcase Photos matching Mehra Studio's authentic Kerala Bridal & Salon Work
   const galleryItems = [
     {
       id: 'g-1',
       title: 'Traditional Kerala Muhurtham Bride',
-      desc: 'Temple gold jewelry setting, Kasavu saree pleats, and waterproof HD makeup.',
+      desc: 'Authentic Kasavu saree box pleating, temple gold jewelry setting, and sweat-proof HD makeup.',
       imageUrl: '/images/kerala-bride-muhurtham.jpg',
     },
     {
       id: 'g-2',
-      title: 'Intricate Bridal Henna & Saree Details',
-      desc: 'Finely detailed red henna motifs and traditional gold bangles.',
-      imageUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=900&q=80',
+      title: 'Kerala Kasavu Bridal Makeover',
+      desc: 'Radiant bride in golden border Kasavu saree, layered temple haram, and fresh Mullappoo garland.',
+      imageUrl: '/images/kerala-bridal-makeover.jpg',
     },
     {
       id: 'g-3',
-      title: 'Royal Bridal Jewelry & Saree Draping',
-      desc: 'Precision box pleating on heavy silk saree with layered necklaces.',
-      imageUrl: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=900&q=80',
+      title: 'Royal Indian Bridal Artistry',
+      desc: 'High-definition waterproof base, intricate gold nath, kundan jewelry, and royal bridal couture.',
+      imageUrl: '/images/mehra-hero-bride.png',
     },
     {
       id: 'g-4',
-      title: 'Dewy Reception & Sangeet Makeover',
-      desc: 'Smokey shimmer eyes, contoured cheekbones, and soft nude lip finish.',
-      imageUrl: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+      title: 'Dewy Reception & Engagement Glam',
+      desc: 'Soft Hollywood textured waves, radiant glass-skin finish, and rich silk saree elegance.',
+      imageUrl: '/images/kerala-reception-glam.jpg',
     },
     {
       id: 'g-5',
-      title: 'Contemporary Engagement Glam',
-      desc: 'Glass skin finish with custom floral bridal braid artistry.',
-      imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80',
+      title: 'Bridal Braid & Jasmine Garland Weave',
+      desc: 'Handcrafted fresh jasmine (Mullappoo) setting with antique temple gold Jada Alankaram ornaments.',
+      imageUrl: '/images/kerala-bridal-braid.jpg',
     },
     {
       id: 'g-6',
-      title: 'Grand Wedding Muhurtham Portrait',
-      desc: 'Sweat-resistant matte formula designed for warm Kerala climate.',
-      imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80',
+      title: 'Professional Hair Styling & Blowout',
+      desc: 'Permanent straightening, nanoplastia smoothing, and mirror-gloss blowout at our salon.',
+      imageUrl: '/images/haircut-styling.jpg',
     }
   ];
 
@@ -50,13 +50,13 @@ export default function GallerySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading with Reference Style */}
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight">
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight text-center">
               Our Work Gallery
             </h2>
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
           </div>
           <p className="text-stone-500 text-xs sm:text-sm max-w-md mx-auto">
             Real brides and clients transformed with love and craftsmanship at our Kanimangalam studio.
@@ -75,7 +75,7 @@ export default function GallerySection() {
               <img
                 src={item.imageUrl}
                 alt={item.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
 
@@ -114,26 +114,26 @@ export default function GallerySection() {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 animate-in fade-in duration-200"
           onClick={() => setSelectedImage(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative border border-stone-200"
+            className="bg-white rounded-3xl max-w-2xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl relative border border-stone-200"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/70 hover:bg-black/90 text-white flex items-center justify-center transition-colors cursor-pointer shadow-md"
               aria-label="Close image preview"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="h-80 sm:h-96 bg-black">
+            <div className="bg-stone-950 flex items-center justify-center p-3 sm:p-5 overflow-hidden min-h-[300px] max-h-[62vh] sm:max-h-[68vh]">
               <img
                 src={selectedImage.imageUrl}
                 alt={selectedImage.title}
-                className="w-full h-full object-cover"
+                className="max-h-[58vh] sm:max-h-[64vh] w-auto max-w-full object-contain rounded-xl shadow-lg"
               />
             </div>
 

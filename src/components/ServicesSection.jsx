@@ -73,13 +73,13 @@ export default function ServicesSection({ onOpenBooking, onSelectServiceForBooki
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading with Reference Ornamental Dashes */}
-        <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-4 mb-2">
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight">
-              Our Services & Prices
+        <div className="text-center mb-10 sm:mb-14">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2">
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#1A1819] tracking-tight text-center">
+              Our Services &amp; Prices
             </h2>
-            <span className="w-10 sm:w-16 h-[2px] bg-[#F48FB1]" />
+            <span className="w-6 sm:w-16 h-[2px] bg-[#F48FB1]" />
           </div>
           <p className="text-stone-500 text-sm sm:text-base max-w-xl mx-auto">
             100% genuine products (L’Oréal, MAC, Kryolan, Casmara, O3+), strict hygiene protocols, and transparent pricing in Kanimangalam, Thrissur.
@@ -101,7 +101,7 @@ export default function ServicesSection({ onOpenBooking, onSelectServiceForBooki
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
 
@@ -139,7 +139,7 @@ export default function ServicesSection({ onOpenBooking, onSelectServiceForBooki
           
           {/* Header of the full menu */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-none flex-nowrap md:flex-wrap">
               <button
                 onClick={() => handleTabChange('all')}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${

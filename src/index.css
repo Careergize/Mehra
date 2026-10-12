@@ -74,17 +74,14 @@
   background: linear-gradient(135deg, #5C1D5D 0%, #4A154B 50%, #350A36 100%);
 }
 
-/* Custom scrollbar */
+/* Hide scrollbar while preserving smooth scrolling */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #FFFDFD;
-}
-::-webkit-scrollbar-thumb {
-  background: #F48FB1;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #C2185B;
+  display: none;
+  width: 0px;
+  background: transparent;
 }

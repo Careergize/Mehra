@@ -6,11 +6,11 @@ export default function FloatingWhatsApp({ onOpenBooking }) {
   const [showTooltip, setShowTooltip] = useState(true);
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 select-none">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end gap-3 select-none">
       
-      {/* Floating Tooltip Bubble */}
+      {/* Floating Tooltip Bubble (Desktop/Tablet Only) */}
       {showTooltip && (
-        <div className="bg-white text-[#1A1819] px-4 py-2.5 rounded-2xl shadow-xl border border-[#F8BBD0] max-w-xs flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
+        <div className="hidden sm:flex bg-white text-[#1A1819] px-4 py-2.5 rounded-2xl shadow-xl border border-[#F8BBD0] max-w-xs items-center gap-3 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <div className="flex-1">
             <p className="text-xs font-bold text-[#C2185B]">
               Need quick appointment help?
@@ -47,13 +47,13 @@ export default function FloatingWhatsApp({ onOpenBooking }) {
           href={studioInfo.getWhatsAppLink("Hi Mehra Beauty Studio, I'm visiting your website and would like to inquire about booking.")}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group w-14 h-14 rounded-full bg-gradient-to-tr from-[#20ba5a] to-[#25D366] text-white flex items-center justify-center shadow-xl shadow-emerald-600/30 hover:scale-110 active:scale-95 transition-all duration-300"
+          className="relative group w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#20ba5a] to-[#25D366] text-white flex items-center justify-center shadow-xl shadow-emerald-600/30 hover:scale-110 active:scale-95 transition-all duration-300"
           aria-label="Chat with Mehra Beauty Parlour on WhatsApp"
         >
           {/* Pulsing ring */}
           <span className="absolute -inset-1 rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none" />
           
-          <MessageCircle className="w-7 h-7 relative z-10 fill-white text-emerald-600" />
+          <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 relative z-10 fill-white text-emerald-600" />
 
           {/* Online badge */}
           <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-white rounded-full flex items-center justify-center">

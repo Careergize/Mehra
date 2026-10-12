@@ -12,7 +12,7 @@ export const galleryItems = [
     category: 'bridal',
     title: 'Traditional Kerala Kasavu Muhurtham Look',
     description: 'Gold-toned temple jewelry fixing, jasmine floral setting, and HD waterproof makeup for a grand wedding at Thrissur.',
-    imageUrl: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/images/kerala-bride-muhurtham.jpg',
     tags: ['Kasavu Bride', 'Temple Jewelry', 'Kerala Wedding']
   },
   {
@@ -20,7 +20,7 @@ export const galleryItems = [
     category: 'bridal',
     title: 'Contemporary Dewy Reception Glamour',
     description: 'Shimmer pigments, softly contoured cheeks, and glamorous Hollywood textured waves for an evening reception.',
-    imageUrl: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80',
+    imageUrl: '/images/kerala-reception-glam.jpg',
     tags: ['Evening Reception', 'Dewy Finish', 'Smokey Eyes']
   },
   {
@@ -43,8 +43,8 @@ export const galleryItems = [
     id: 'g-5',
     category: 'bridal',
     title: 'Intricate Kerala Bridal Braid & Jasmine Weave',
-    description: 'Handcrafted fresh jasmine garland garland placement with antique jada alankaram hair accessories.',
-    imageUrl: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80',
+    description: 'Handcrafted fresh jasmine garland placement with antique jada alankaram hair accessories.',
+    imageUrl: '/images/kerala-bridal-braid.jpg',
     tags: ['Bridal Braid', 'Mullappoo', 'Traditional']
   },
   {
