@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-primary-pink: #C2185B;
+  --color-primary-pink-hover: #A8134D;
+  --color-primary-pink-dark: #880E4F;
+  --color-primary-pink-light: #FCE4EC;
+  --color-primary-pink-muted: #F8BBD0;
+  
+  --color-berry: #D81B60;
+  --color-plum: #4A154B;
+  --color-plum-dark: #370E38;
+  
+  --color-charcoal: #1A1819;
+  --color-charcoal-light: #2D272A;
+  --color-charcoal-muted: #5E585B;
+  
+  --color-cream: #FFFDFD;
+  --color-cream-soft: #FDF9FA;
+  --color-cream-dark: #F7F1F3;
+}
+
+:root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+
+/* 2026 Glassmorphic and Card Shadows */
+.card-shadow {
+  box-shadow: 0 10px 30px -5px rgba(194, 24, 91, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 20px 40px -10px rgba(194, 24, 91, 0.16), 0 8px 16px -4px rgba(0, 0, 0, 0.05);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(248, 187, 208, 0.5);
+}
+
+/* Section Title With Ornamental Horizontal Lines as in reference UI */
+.section-heading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.section-heading-line {
+  flex: 1;
+  max-width: 4.5rem;
+  height: 1.5px;
+  background-color: #F48FB1;
+  border-radius: 9999px;
+}
+
+/* Gradient accents */
+.gradient-berry {
+  background: linear-gradient(135deg, #D81B60 0%, #C2185B 60%, #880E4F 100%);
+}
+
+.gradient-berry-card {
+  background: linear-gradient(135deg, #E91E63 0%, #C2185B 50%, #880E4F 100%);
+}
+
+.gradient-purple-card {
+  background: linear-gradient(135deg, #5C1D5D 0%, #4A154B 50%, #350A36 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFDFD;
+}
+::-webkit-scrollbar-thumb {
+  background: #F48FB1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C2185B;
+}
