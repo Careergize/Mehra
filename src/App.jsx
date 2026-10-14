@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useSalonMotion from './hooks/useSalonMotion';
 import { ArrowUpRight, ArrowRight, Camera as Instagram, Menu, X, Plus, Minus, MapPin, Phone, Sparkles } from 'lucide-react';
 import AppointmentModal from './components/AppointmentModal';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -23,6 +24,7 @@ const looks = [
   ['kerala-bridal-makeover.jpg', 'Made for you', 'MEHRA MUSE'],
 ];
 export default function App() {
+  useSalonMotion();
   const [booking, setBooking] = useState(false);
   const [selected, setSelected] = useState(null);
   const [menu, setMenu] = useState(false);
@@ -42,7 +44,7 @@ export default function App() {
       </header>
       <section className="hero wrap">
         <div className="hero-copy"><p className="eyebrow">YOUR BEAUTY, REIMAGINED <span>✦</span></p><h1>YOUR LOOK.<br/><span>YOUR ERA.</span></h1><p className="hero-caption">HAIR. BEAUTY. A LITTLE MAIN CHARACTER ENERGY.</p><p className="hero-description">A fresh cut. A bridal glow. A moment just for you.<br/>Meet your next chapter at Mehra, Thrissur.</p><button className="pill dark" onClick={() => book()}>Find your new look <ArrowRight size={18}/></button><div className="hero-footnote"><span className="tiny-star">✦</span> BEAUTY WITH A PERSONAL TOUCH, SINCE 2014</div></div>
-        <div className="hero-photo"><img src="/images/haircut-styling.jpg" alt="Soft dimensional waves styled at a warm, modern salon" fetchPriority="high"/><div className="photo-shade"/><span className="photo-note">a little refresh. a whole new feeling.</span></div>
+        <div className="hero-photo"><img src="/images/haircut-styling.jpg" alt="Mehra salon hair styling" fetchPriority="high"/><div className="photo-shade"/><span className="photo-note">a little refresh. a whole new feeling.</span></div>
         <a href="#looks" className="round-seal"><span>YOUR NEXT CHAPTER</span><Sparkles size={22}/><strong>NEW<br/>LOOKS</strong><span>STARTS RIGHT HERE ↗</span></a>
       </section>
     </div>
@@ -54,14 +56,25 @@ export default function App() {
       </section>
       <section className="bridal-section wrap" id="about"><div className="bridal-photo"><img src="/images/kerala-bride-muhurtham.jpg" alt="Traditional Kerala bride with jasmine flowers and gold jewelry" loading="lazy"/><span className="image-label">ROOTED IN TRADITION. MADE FOR YOU.</span></div><div className="bridal-copy"><p className="section-tag">MORE THAN A MAKEOVER <span>✦</span></p><h2>STILL YOU.<br/><span>JUST RADIANT.</span></h2><p>From your everyday refresh to your once-in-a-lifetime day, we make space for your kind of beautiful.</p><p>For over 10 years, our Kanimangalam studio has brought a personal touch to hair, skin and Kerala bridal artistry. Thoughtful care. Beautiful details. Confidence that stays with you.</p><button className="pill dark" onClick={() => book(servicesData.find(s => s.id === 'b1'))}>Let's create your bridal look <ArrowUpRight size={17}/></button><div className="studio-facts"><div><strong>10+</strong><span>YEARS OF ARTISTRY</span></div><div><strong>100%</strong><span>PERSONALLY YOU</span></div><span className="fact-flower">✳</span></div></div></section>
       <section className="looks-section wrap section-space" id="looks"><div className="section-top"><div><p className="section-tag">THE INSPIRATION EDIT <span>✦</span></p><h2>FRESH FROM THE STUDIO.</h2></div><a className="text-link" href={studioInfo.social.instagram} target="_blank" rel="noreferrer"><Instagram size={17}/> @mehrabeautystudio <ArrowUpRight size={16}/></a></div><div className="looks-grid">{looks.map(([image, title, tag]) => <a href={studioInfo.social.instagram} target="_blank" rel="noreferrer" className="look-card" key={title}><div><img src={`/images/${image}`} alt={title} loading="lazy"/><span>{tag}</span><i><ArrowUpRight size={18}/></i></div><p>{title}</p></a>)}</div></section>
-      <section className="contact-section" id="contact"><div className="wrap contact-inner"><div><p className="eyebrow">YOUR NEXT GOOD BEAUTY DAY <span>✦</span></p><h2>LET'S MAKE<br/><span>IT YOURS.</span></h2><button className="pill pink" onClick={() => book()}>Book your appointment <ArrowUpRight size={18}/></button></div><div className="contact-details"><p className="section-tag">COME ON IN.</p><a href={studioInfo.social.googleMaps} target="_blank" rel="noreferrer"><MapPin size={20}/><span>Chirayinmel Building, near SN School<br/>Kanimangalam, Thrissur, Kerala 680027</span><ArrowUpRight size={18}/></a><a href={`tel:${studioInfo.phoneRaw}`}><Phone size={19}/>{studioInfo.phone}</a><div className="opening-hours"><span>Monday – Saturday</span><span>{studioInfo.hours.monSat}</span><span>Sunday</span><span>{studioInfo.hours.sun}</span></div><a className="text-link" href={studioInfo.getWhatsAppLink()} target="_blank" rel="noreferrer">Say hello on WhatsApp <ArrowUpRight size={16}/></a></div></div></section>
       <section className="faq-section wrap"><p className="section-tag">GOOD TO KNOW <span>✦</span></p>{[['How do I book an appointment?', 'Choose your service and preferred date in our booking form. Send your request through WhatsApp and our team will confirm availability and pricing.'], ['Can I book a bridal consultation?', 'Absolutely. Book a bridal appointment so we can discuss your event, preferred look, hair styling and saree draping.'], ['Where can I find the studio?', studioInfo.address.full]].map(([q,a],i) => <div className="faq-item" key={q}><button onClick={() => setFaq(faq === i ? null : i)} aria-expanded={faq === i}>{q}{faq === i ? <Minus size={18}/> : <Plus size={18}/>}</button>{faq === i && <p>{a}</p>}</div>)}</section>
       <TestimonialsSection />
     </main>
-    <footer className="site-footer wrap"><a className="wordmark" href="#home">MEHRA<span>Beauty Studio</span></a><p>© {new Date().getFullYear()} Mehra Beauty Studio. All rights reserved.</p><a href={studioInfo.social.instagram} target="_blank" rel="noreferrer">A LITTLE MORE MEHRA <Instagram size={18}/><ArrowUpRight size={16}/></a></footer>
+    <footer className="studio-footer" id="contact" aria-label="Studio contact and social links">
+      <div className="wrap">
+        <div className="studio-footer-top">
+          <div className="studio-footer-socials"><a href={studioInfo.social.instagram} target="_blank" rel="noreferrer" aria-label="Follow Mehra on Instagram"><Instagram size={18}/></a><a href={studioInfo.social.facebook} target="_blank" rel="noreferrer" aria-label="Follow Mehra on Facebook"><span aria-hidden="true">f</span></a><a href={studioInfo.getWhatsAppLink()} target="_blank" rel="noreferrer" aria-label="Contact Mehra on WhatsApp"><Phone size={16}/></a></div>
+          <a className="wordmark" href="#home">MEHRA<span>Beauty Studio</span></a>
+          <button className="footer-appointment" onClick={() => book()}>Book your look <ArrowUpRight size={16}/></button>
+        </div>
+        <div className="studio-footer-address"><p className="footer-tagline">YOUR KIND OF BEAUTIFUL.</p><a href={studioInfo.social.googleMaps} target="_blank" rel="noreferrer"><MapPin size={15}/><span>Ground Floor, Chirayinmel Building, near SN School<br/>Kanimangalam, Thrissur, Kerala 680027</span><ArrowUpRight size={15}/></a><div className="studio-footer-hours"><span>Mon – Sat: {studioInfo.hours.monSat}</span><span>Sun: {studioInfo.hours.sun}</span></div></div>
+        <div className="studio-footer-bottom"><a href={`tel:${studioInfo.phoneRaw}`}>{studioInfo.phone}</a><p>© {new Date().getFullYear()} Mehra Beauty Studio. All rights reserved.</p><a href="#home">Back to top <ArrowUpRight size={13}/></a></div>
+      </div>
+    </footer>
     <AppointmentModal isOpen={booking} onClose={() => setBooking(false)} initialService={selected}/>
   </div>;
 }
+
+
 
 
 
