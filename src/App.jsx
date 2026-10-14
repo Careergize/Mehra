@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useSalonMotion from './hooks/useSalonMotion';
 import ContactPage from './components/ContactPage';
-import { ArrowUpRight, ArrowRight, Camera as Instagram, Menu, X, Plus, Minus, MapPin, Phone, Sparkles } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Camera as Instagram, Menu, X, Plus, Minus, MapPin, Phone } from 'lucide-react';
 import AppointmentModal from './components/AppointmentModal';
 import TestimonialsSection from './components/TestimonialsSection';
 import { studioInfo } from './data/studioInfo';
@@ -60,7 +60,7 @@ export default function App() {
       {!isContact && <section className="hero wrap">
         <div className="hero-copy"><p className="eyebrow">YOUR BEAUTY, REIMAGINED <span>✦</span></p><h1>YOUR LOOK.<br/><span>YOUR ERA.</span></h1><p className="hero-caption">HAIR. BEAUTY. A LITTLE MAIN CHARACTER ENERGY.</p><p className="hero-description">A fresh cut. A bridal glow. A moment just for you.<br/>Meet your next chapter at Mehra, Thrissur.</p><button className="pill dark" onClick={() => book()}>Find your new look <ArrowRight size={18}/></button><div className="hero-footnote"><span className="tiny-star">✦</span> BEAUTY WITH A PERSONAL TOUCH, SINCE 2014</div></div>
         <div className="hero-photo"><img src="/images/haircut-styling.jpg" alt="Mehra salon hair styling" fetchPriority="high"/><div className="photo-shade"/><span className="photo-note">a little refresh. a whole new feeling.</span></div>
-        <a href="#looks" className="round-seal"><span>YOUR NEXT CHAPTER</span><Sparkles size={22}/><strong>NEW<br/>LOOKS</strong><span>STARTS RIGHT HERE ↗</span></a>
+        <a href="#looks" className="round-seal"><span>YOUR NEXT CHAPTER</span><strong>NEW<br/>LOOKS</strong><span>STARTS RIGHT HERE ↗</span></a>
       </section>}
     </div>
     {!isContact && <div className="marquee" aria-label="Our specialties"><span>GOOD HAIR DAYS</span><b>✦</b><span>BRIDAL GLOW</span><b>✦</b><span>A LITTLE SELF LOVE</span><b>✦</b><span>ALL YOU, ONLY ELEVATED</span><b>✦</b></div>}
@@ -88,6 +88,7 @@ export default function App() {
     <AppointmentModal isOpen={booking} onClose={() => setBooking(false)} initialService={selected}/>
   </div>;
 }
+
 
 
 
