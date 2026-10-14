@@ -65,31 +65,31 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="bg-white rounded-3xl max-w-xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#F8BBD0] relative animate-in zoom-in-95 duration-200"
+        className="bg-[#151115] rounded-3xl max-w-xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#493640] relative animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-100 hover:bg-[#FCE4EC] hover:text-[#C2185B] text-stone-600 flex items-center justify-center transition-colors cursor-pointer"
+          className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[#2b2229] hover:bg-[#38212d] hover:text-[#f0a6bc] text-[#bdb5bb] flex items-center justify-center transition-colors cursor-pointer"
           aria-label="Close appointment modal"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="p-6 sm:p-8 bg-[#FFF5F8] border-b border-[#F8BBD0]/40 flex items-start gap-4">
+        <div className="p-6 sm:p-8 bg-[#21171d] border-b border-[#493640] flex items-start gap-4">
           <div className="w-12 h-12 rounded-2xl bg-[#1A1819] border border-amber-400/40 p-1 flex items-center justify-center shrink-0 shadow-sm overflow-hidden">
             <img src="/images/mehra-emblem.jpg" alt="Mehra Logo" className="w-full h-full object-contain" />
           </div>
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#FCE4EC] text-[#C2185B] text-[11px] font-bold mb-1">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#38212d] text-[#f0a6bc] text-[11px] font-bold mb-1">
               <span>Instant Salon &amp; Bridal Booking</span>
             </div>
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1A1819]">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white">
               Book Your Appointment
             </h3>
-            <p className="text-xs text-stone-500 mt-0.5">
+            <p className="text-xs text-[#bdb5bb] mt-0.5">
               Chirayinmel Building, Kanimangalam, Thrissur
             </p>
           </div>
@@ -99,11 +99,11 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
         <div className="p-6 sm:p-8">
           {submitted ? (
             <div className="text-center py-8 space-y-3">
-              <div className="w-14 h-14 rounded-full bg-[#FCE4EC] text-[#C2185B] mx-auto flex items-center justify-center">
+              <div className="w-14 h-14 rounded-full bg-[#38212d] text-[#f0a6bc] mx-auto flex items-center justify-center">
                 <Check className="w-8 h-8" />
               </div>
-              <h4 className="font-serif text-xl font-bold text-[#1A1819]">WhatsApp Dispatched!</h4>
-              <p className="text-xs sm:text-sm text-stone-500 max-w-xs mx-auto">
+              <h4 className="font-serif text-xl font-bold text-white">WhatsApp Dispatched!</h4>
+              <p className="text-xs sm:text-sm text-[#bdb5bb] max-w-xs mx-auto">
                 Opening your WhatsApp chat with our front desk specialist at +91 79072 80180.
               </p>
             </div>
@@ -113,39 +113,39 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
               {/* Selected Service Display (Dropdown Removed - Mentioned in Front) */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
+                  <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider">
                     Selected Service / Treatment
                   </label>
                   {initialService && (
                     <a
                       href="#services"
                       onClick={onClose}
-                      className="text-[11px] font-semibold text-[#C2185B] hover:underline"
+                      className="text-[11px] font-semibold text-[#f0a6bc] hover:underline"
                     >
                       Browse Other Rows
                     </a>
                   )}
                 </div>
 
-                <div className="rounded-2xl border border-[#F8BBD0] bg-gradient-to-br from-[#FFF5F8] via-[#FFFDFD] to-[#FFF0F5] p-4 sm:p-5 shadow-xs">
+                <div className="rounded-2xl border border-[#493640] bg-gradient-to-br from-[#21171d] via-[#191319] to-[#21171d] p-4 sm:p-5 shadow-xs">
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 flex-wrap mb-1.5">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#C2185B] bg-[#FCE4EC] px-2.5 py-0.5 rounded-full border border-[#F8BBD0]">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#f0a6bc] bg-[#38212d] px-2.5 py-0.5 rounded-full border border-[#493640]">
                           {currentService.category ? `${currentService.category} Service` : 'Bridal & Salon'}
                         </span>
                           {currentService.duration && (
-                            <span className="text-[11px] text-stone-500 flex items-center gap-1 font-medium">
-                              <Clock className="w-3.5 h-3.5 text-stone-400" />
+                            <span className="text-[11px] text-[#bdb5bb] flex items-center gap-1 font-medium">
+                              <Clock className="w-3.5 h-3.5 text-[#bdb5bb]" />
                               {currentService.duration}
                             </span>
                           )}
                         </div>
-                        <h4 className="font-serif text-base sm:text-lg font-bold text-[#1A1819] leading-snug">
+                        <h4 className="font-serif text-base sm:text-lg font-bold text-white leading-snug">
                           {currentService.title}
                         </h4>
                         {currentService.shortDesc && (
-                          <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+                          <p className="text-xs text-[#bdb5bb] mt-1 leading-relaxed">
                             {currentService.shortDesc}
                           </p>
                         )}
@@ -164,35 +164,35 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
               {/* Client Info Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider mb-1.5">
                     Your Name *
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <User className="w-4 h-4 text-[#bdb5bb] absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="text"
                       required
                       placeholder="e.g. Sandra Nair"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#493640] bg-[#100e10] text-white text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider mb-1.5">
                     WhatsApp Number *
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                    <Phone className="w-4 h-4 text-[#bdb5bb] absolute left-3 top-1/2 -translate-y-1/2" />
                     <input
                       type="tel"
                       required
                       placeholder="e.g. +91 98765 43210"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-[#493640] bg-[#100e10] text-white text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
                     />
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
               {/* Date & Time Slot */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider mb-1.5">
                     Preferred Date *
                   </label>
                   <input
@@ -209,18 +209,18 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
                     required
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
+                    className="w-full px-3 py-2.5 rounded-xl border border-[#493640] bg-[#100e10] text-white text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider mb-1.5">
                     Time Window
                   </label>
                   <select
                     value={timeSlot}
                     onChange={(e) => setTimeSlot(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
+                    className="w-full px-3 py-2.5 rounded-xl border border-[#493640] bg-[#100e10] text-white text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
                   >
                     <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
                     <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
@@ -232,7 +232,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
 
               {/* Notes */}
               <div>
-                <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-[#eee7ec] uppercase tracking-wider mb-1.5">
                   Notes / Bridal Details (Optional)
                 </label>
                 <textarea
@@ -240,7 +240,7 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
                   placeholder="Mention hair length, saree draping, or wedding location..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-stone-300 text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#493640] bg-[#100e10] text-white text-xs sm:text-sm focus:outline-hidden focus:border-[#C2185B]"
                 />
               </div>
 
@@ -263,3 +263,4 @@ export default function AppointmentModal({ isOpen, onClose, initialService }) {
     </div>
   );
 }
+
